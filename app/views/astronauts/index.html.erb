@@ -1,0 +1,17 @@
+<h1>Astronauts</h1>
+
+<% @astronauts.each do |astronaut|%>
+<div id="<%= astronaut.id %>">
+<p><%= astronaut.name %></p>
+<p><%= astronaut.age %></p>
+<p><%= astronaut.job %></p>
+
+<% astronaut.alpha_missions.each do |mission| %>
+ <%= mission.title %>
+ <% end %>
+
+ <%= "Total time in space:#{astronaut.total_time_in_space}" %>
+</div>
+<% end %>
+
+<%="Average age:#{@astronauts.average_age}" %>
